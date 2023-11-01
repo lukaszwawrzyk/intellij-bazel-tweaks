@@ -1,18 +1,15 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.lukaszwawrzyk.intellijbazeltweaks</id>
-    <name>intellij-bazel-tweaks Template</name>
-    <vendor>lukaszwawrzyk</vendor>
+    <id>org.virtuslab.intellij-bazel-tweaks</id>
+    <name>IntelliJ Bazel Tweaks</name>
+    <vendor>VirtusLab</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.google.idea.bazel.ijwb</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.lukaszwawrzyk.intellijbazeltweaks.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+    <extensions defaultExtensionNs="com.google.idea.blaze">
+        <AttachSourcesFilter implementation="org.virtuslab.bazel.tweaks.sources.LibrarySourceAttachStrategy"/>
+        <BlazeLibrarySorter implementation="org.virtuslab.bazel.tweaks.sources.MissingLibrarySourceAttacher"/>
+        <SyncPlugin implementation="org.virtuslab.bazel.tweaks.sources.ProjectDataInterceptor"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.lukaszwawrzyk.intellijbazeltweaks.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
 </idea-plugin>
