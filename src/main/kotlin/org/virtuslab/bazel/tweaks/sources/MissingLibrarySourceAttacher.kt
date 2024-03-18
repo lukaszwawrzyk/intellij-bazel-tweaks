@@ -1,7 +1,7 @@
 package org.virtuslab.bazel.tweaks.sources
 
 import com.google.common.collect.ImmutableList
-import com.google.idea.blaze.base.command.buildresult.BlazeArtifact.LocalFileArtifact
+import com.google.idea.blaze.base.command.buildresult.LocalFileArtifact
 import com.google.idea.blaze.base.ideinfo.ArtifactLocation
 import com.google.idea.blaze.base.ideinfo.LibraryArtifact
 import com.google.idea.blaze.base.model.BlazeLibrary
